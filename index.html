@@ -438,6 +438,10 @@ tr:nth-child(even) td{background:#ECEAE8;}
 </div>
 <script>
 const S={get:(k)=>{try{return JSON.parse(localStorage.getItem('sc-'+k));}catch{return null;}},set:(k,v)=>{try{localStorage.setItem('sc-'+k,JSON.stringify(v));}catch{}}};
+
+const VERSION='week-27';
+if(S.get('version')!==VERSION){localStorage.clear();S.set('version',VERSION);}
+
 let editMode=false;
 let openItems={};
 
